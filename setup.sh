@@ -29,10 +29,17 @@ cp vimrc ~/ || { echo "Failed to copy vimrc"; exit 1; }
 cp tmux.conf ~/ || { echo "Failed to copy tmux.conf"; exit 1; }
 cp config.fish ~/.config/fish/ || { echo "Failed to copy config.fish"; exit 1; }
 
+# Set Fish as the default shell
+if command -v fish &> /dev/null; then
+    echo "Setting Fish as the default shell..."
+    chsh -s "$(which fish)" || { echo "Failed to set Fish as default shell"; exit 1; }
+else
+    echo "Fish is not installed. Default shell not changed."
+fi
+
 # Reload Tmux configuration
 echo "Reloading Tmux configuration..."
 tmux source-file ~/.tmux.conf
 
 # Notify user
 echo "Setup complete! Enjoy your enhanced terminal experience! 🚀"
-
