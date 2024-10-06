@@ -4,11 +4,11 @@
 echo "Installing Vim, Tmux, and Fish Shell..."
 if command -v apt-get &> /dev/null; then
     sudo apt-get update
-    sudo apt-get install -y vim tmux fish
+    sudo apt-get install -y vim tmux fish fortune
 elif command -v brew &> /dev/null; then
-    brew install vim tmux fish
+    brew install vim tmux fish fortune
 elif command -v yum &> /dev/null; then
-    sudo yum install -y vim-enhanced tmux fish
+    sudo yum install -y vim-enhanced tmux fish fortune
 else
     echo "Package manager not supported. Please install Vim, Tmux, and Fish manually."
     exit 1
@@ -22,9 +22,8 @@ echo "Backing up existing configuration files..."
 
 # Copy new configuration files
 echo "Copying new configuration files..."
-cp .vimrc ~/
-cp .tmux.conf ~/
-mkdir -p ~/.config/fish
+cp vimrc ~/
+cp tmux.conf ~/
 cp config.fish ~/.config/fish/
 
 # Reload Tmux configuration
