@@ -20,11 +20,14 @@ echo "Backing up existing configuration files..."
 [ -f ~/.tmux.conf ] && mv ~/.tmux.conf ~/.tmux.conf.backup
 [ -f ~/.config/fish/config.fish ] && mv ~/.config/fish/config.fish ~/.config/fish/config.fish.backup
 
+# Create Fish config directory if it doesn't exist
+mkdir -p ~/.config/fish
+
 # Copy new configuration files
 echo "Copying new configuration files..."
-cp vimrc ~/
-cp tmux.conf ~/
-cp config.fish ~/.config/fish/
+cp vimrc ~/ || { echo "Failed to copy vimrc"; exit 1; }
+cp tmux.conf ~/ || { echo "Failed to copy tmux.conf"; exit 1; }
+cp config.fish ~/.config/fish/ || { echo "Failed to copy config.fish"; exit 1; }
 
 # Reload Tmux configuration
 echo "Reloading Tmux configuration..."
@@ -32,3 +35,4 @@ tmux source-file ~/.tmux.conf
 
 # Notify user
 echo "Setup complete! Enjoy your enhanced terminal experience! 🚀"
+
