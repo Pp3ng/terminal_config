@@ -10,7 +10,7 @@ To set up your Vim, Tmux, and Fish Shell configurations using the provided `.vim
 
    ```sh
    git clone https://github.com/Pp3ng/terminal_config.git
-   cd termianl_config
+   cd terminal_config
    ```
 
 2. Make the setup script executable:
