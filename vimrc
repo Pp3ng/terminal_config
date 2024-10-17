@@ -94,3 +94,4 @@ nnoremap <Leader>cc :%s/\/\/.*//<CR>
 "hightlight the current line
 set cursorline
 set cursorcolumn
+set virtualedit=all
