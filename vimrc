@@ -88,7 +88,8 @@ nnoremap <Leader>sc :nohlsearch<CR>
 nnoremap <Leader>cl :%s/\s\+$//e<CR>
 nnoremap <Leader>wq :wq<CR>
 nnoremap <Leader>!! :q!<CR>
-map <Leader>sp :set spell!<CR>
+nnoremap <Leader>sp :set spell!<CR>
+nnoremap <Leader>cc :%s/\/\/.*//<CR>
 
 "hightlight the current line
 set cursorline
