@@ -25,7 +25,7 @@ mkdir -p ~/.config/fish
 
 # Copy new configuration files
 echo "Copying new configuration files..."
-cat vimrc > ~/.vimrc || { echo "Failed to copy vimrc"; exit 1; }
+cat .vimrc > ~/.vimrc || { echo "Failed to copy vimrc"; exit 1; }
 cat tmux.conf > ~/.tmux.conf || { echo "Failed to copy tmux.conf"; exit 1; }
 cat config.fish > ~/.config/fish/config.fish || { echo "Failed to copy config.fish"; exit 1; }
 
