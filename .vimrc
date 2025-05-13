@@ -69,6 +69,9 @@ inoremap <C-Space> <C-x><C-o>
 "map <F5> :w<CR>:!g++ % -o %< && ./%<<CR>
 map <F5> :w<CR>:!make %:r && ./%:r<CR>
 
+"all comments to lower case
+map <Leader>tl :%s,//\zs\U\(\w\+\),\L\1,g<CR>
+
 "auto complete brackets
 inoremap ( ()<Left>
 inoremap {<CR> {<CR>}<C-o>k<C-o>A<CR>
@@ -90,6 +93,7 @@ nnoremap <Leader>wq :wq<CR>
 nnoremap <Leader>!! :q!<CR>
 nnoremap <Leader>sp :set spell!<CR>
 nnoremap <Leader>cc :%s/\/\/.*
+" format c and cpp code 
 nnoremap <Leader>cf :w<CR>:!clang-format -i %<CR>:e!<CR>
 
 "hightlight the current line
